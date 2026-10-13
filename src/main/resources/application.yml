@@ -1,0 +1,48 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/benchmark;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+jev:
+  api:
+    # local = free keyword stand-in (not TypeSafe Jev). remote = TypeSafe/OpenRouter.
+    mode: ${JEV_MODE:local}
+    url: ${JEV_API_URL:https://api.typesafe.ai/v1/systemone}
+    key: ${TYPESAFE_API_KEY:}
+    model: ${JEV_MODEL:jev-latest}
+    timeout: 5s
+  pricing:
+    # Unused in local mode (zero tokens). TypeSafe list price for remote runs.
+    input-per-million-usd: "0.042"
+    output-per-million-usd: "0"
+
+llm:
+  api:
+    # Ollama's OpenAI-compatible chat endpoint. No key is required on localhost.
+    url: ${LLM_API_URL:http://127.0.0.1:11434/v1/chat/completions}
+    key: ${LLM_API_KEY:${OPENAI_API_KEY:}}
+    model: ${LLM_MODEL:qwen2.5-coder:14b-instruct-q4_K_M}
+    timeout: 45s
+    # Local Ollama often needs one try; raise this for remote APIs.
+    max-attempts: 1
+  pricing:
+    # Local Ollama has no token charge. Set these if llm.api.url points at a paid API.
+    input-per-million-usd: "0"
+    output-per-million-usd: "0"
+
+routing:
+  confidence-threshold: 0.85
+
+benchmark:
+  dataset: classpath:dataset/labeled-tickets.json
+  # Full file is 24 tickets and many sequential Ollama calls. Override with ?limit=
+  default-limit: 4

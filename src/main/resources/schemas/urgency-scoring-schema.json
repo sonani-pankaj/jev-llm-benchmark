@@ -1,0 +1,9 @@
+{
+  "instructions": "How urgent is this support ticket?",
+  "levels": [
+    "LOW: routine request with no time pressure",
+    "MEDIUM: should be handled in the normal queue",
+    "HIGH: the customer is blocked or money is at risk",
+    "CRITICAL: outage, data loss, or the customer is about to leave"
+  ]
+}

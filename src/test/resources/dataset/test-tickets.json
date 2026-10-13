@@ -1,0 +1,12 @@
+[
+  {"id": "c1", "text": "Duplicate invoice charge. category=BILLING urgency=HIGH", "category": "BILLING", "urgency": "HIGH"},
+  {"id": "c2", "text": "Send last month invoice. category=BILLING urgency=LOW", "category": "BILLING", "urgency": "LOW"},
+  {"id": "c3", "text": "Dashboard crash after release. category=BUG urgency=CRITICAL", "category": "BUG", "urgency": "CRITICAL"},
+  {"id": "c4", "text": "Export returns 500. category=BUG urgency=MEDIUM", "category": "BUG", "urgency": "MEDIUM"},
+  {"id": "c5", "text": "Cannot log in. category=ACCOUNT urgency=LOW retry-once", "category": "ACCOUNT", "urgency": "LOW"},
+  {"id": "c6", "text": "Remove former teammate. category=ACCOUNT urgency=HIGH", "category": "ACCOUNT", "urgency": "HIGH"},
+  {"id": "c7", "text": "Enterprise pricing question. category=SALES urgency=MEDIUM", "category": "SALES", "urgency": "MEDIUM"},
+  {"id": "c8", "text": "Ready to buy 200 seats today. category=SALES urgency=CRITICAL", "category": "SALES", "urgency": "CRITICAL"},
+  {"id": "a1", "text": "ambiguous invoice and a crash. category=BILLING urgency=MEDIUM", "category": "BILLING", "urgency": "MEDIUM"},
+  {"id": "a2", "text": "ambiguous login or upgrade. category=ACCOUNT urgency=HIGH", "category": "ACCOUNT", "urgency": "HIGH"}
+]

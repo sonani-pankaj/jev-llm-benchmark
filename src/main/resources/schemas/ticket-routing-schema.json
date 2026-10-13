@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "category": {
+      "type": "string",
+      "enum": ["BILLING", "BUG", "ACCOUNT", "SALES"],
+      "description": "Queue that should own the ticket"
+    },
+    "urgency": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
+      "description": "How quickly the ticket needs a human"
+    },
+    "reasoning": {
+      "type": "string",
+      "description": "Short justification for the category and urgency"
+    }
+  },
+  "required": ["category", "urgency", "reasoning"]
+}
